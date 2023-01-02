@@ -1,16 +1,38 @@
+\newgeometry{top=8.0cm, bottom=55mm, right=3cm, left=3cm}
 \begin{titlepage}
-    \begin{center}
+    \setstretch{1}
+        \center
+        \textbf{\Large \mytitle}\\[0.5cm]
+        \textbf{\large \mysubtitle}\\[0.5cm]
 
+    \vspace{3cm}
+    \textbf{\Large \textls{\mydoctype}}\\[0.8cm]
+    \textbf{an der \myuniname\\
+    Fakultät \myfaculty\\
+    Studiengang \mycourse}\\[0.5cm]
+    \vfill\vfill\vfill
 
-        \vspace{0.5cm}
-        Sebastian Peschke, Johannes Emanuel Strecker
-        \vfill
-        Studienarbeit\\
-        an der Hochschule für Angewandte Wissenschaften Hof\\
-        Fakultät Informatik\\
-        Studiengang Mobile Computing\\
-
-    \end{center}
+        \begin{minipage}{0.4\textwidth}
+            \begin{flushleft}
+                \textbf{Vorgelegt bei\\
+                \mydocent{}\\
+                \myunistreet{} \myuninumber{}\\
+                \myunizip{} \myuniplace{}
+                }
+            \end{flushleft}
+        \end{minipage}
+~
+    \begin{minipage}{0.4\textwidth}
+        \begin{flushright}
+            \textbf{
+            Vorgelegt von\\
+            \myname \\
+            }
+        \end{flushright}
+    \end{minipage}
+    \vfill
+    \textbf{Hof, 09.01.2023}
 
 
 \end{titlepage}
+\restoregeometry
