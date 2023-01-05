@@ -1,7 +1,8 @@
+%! suppress = EscapeAmpersand
 %! Author = Sebastian Peschke & Johannes Emanuel Strecker
 %! Date = 09.01.2023
 
-\usepackage{glossaries}
+
 % Preamble
 \input{header}
 \input{contents/vars}
@@ -9,19 +10,23 @@
 
 
 \begin{document}
-    \pagestyle{sta}
+    \pagestyle{plain}
     \pagenumbering{Roman}
     \input{titlepage}
+    \input{contents/abstract}
     \input{meta}
     \clearpage
     \pagenumbering{arabic}
-    \let\Section\section
+
+
     %! suppress = MightBreakTexify
-    \renewcommand\section{\clearpage\Section}
+    %\renewcommand\section{\clearpage\section}
     \input{contents/intro}
     \input{contents/content}
     \input{contents/fin}
-
+    \afterpage{\blankpage}
+    \clearpage
+    \printbibliography
 
 
 \end{document}
