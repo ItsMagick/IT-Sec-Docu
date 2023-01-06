@@ -2,22 +2,23 @@
 %! Date = 1/2/23
 
 
-\section{Einleitung}
-\section{Log4Shell}
-\subsection{Historie}
+\section{Einführung}\label{sec:einfuhrung}
+\input{contents/intro}
+\section{Log4Shell}\label{sec:log4shell}
+\subsection{Historie}\label{subsec:historie}
 \input{contents/log4j}
 \input{contents/jndi}
 \input{contents/ldap}
-\subsection{Exploit}
+\subsection{Exploit}\label{subsec:exploit}
 \subsubsection{JNDI Architektur und Funktionsweise}
 \subsubsection{Exploitvektor}
 \subsubsection{Versuchsaufbau und Exploit}
 \subsubsection{Automatisierung der Exploit Detection mit CanaryTokens}
-\subsection{Mitigation}
+\subsection{Mitigation}\label{subsec:mitigation}
 \input{contents/mitigation}
 \subsubsection{Hotpatch von Apache Solr}
 \subsubsection{Official Patch}
 \subsubsection{Patching Strategien}
-\section{Fazit}
+\section{Fazit}\label{sec:fazit}
 
 %\input{contents/patches}
