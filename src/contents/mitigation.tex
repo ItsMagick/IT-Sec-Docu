@@ -1,7 +1,11 @@
 %! Author = opiwa
 %! Date = 04.01.2023
 
-Da der \mysubtitle  Exploit auf vielen zusammenhängenden Java Library's aufbaut, existieren ebenfalls zahlreiche Wege der Mitigation.
+\subsection{Mitigation}\label{subsec:mitigation}
+Da der Log4Shell Exploit auf vielen zusammenhängenden Java Library's aufbaut, existieren ebenfalls zahlreiche Wege der Mitigation.
 
 \subsubsection{Quick and Dirty}
-Eine der schnellsten Möglichkeiten Log4Shell zu mitigieren, ist es \verb|JNDILookup| aus dem classpath zu entfernen.\footfullcite{redditThread}
+Eine der schnellsten Möglichkeiten Log4Shell zu mitigieren, ist es \verb|org.apache.logging.log4j.core.lookup.JndiLookup| aus dem classpath zu entfernen.\footfullcite{redditThread}
+Dieser Schritt führt dazu, dass der Logger keine \gls{jndi} Lookups mehr durchführen kann, wodurch der Angriffsvektor komplett wegfällt.
+Da \verb|JndiLookup| allerdings ein wesentlicher Bestandteil des Featuresets von Log4j 2 ist, ist dieser Schritt (obwohl effektiv) nur eine Kurzzeitlösung.
+
