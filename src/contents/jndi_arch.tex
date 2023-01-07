@@ -19,7 +19,7 @@ das Resultat an einer remote location in Form eines Kompilats (Objekts) mithilfe
 dieser Datei machen.
 Hierzu muss man die zugrundeliegende Log4j Syntax verstehen:
 \input{listings/Log4j-logging}
-\vspace{0.3cm}
+\bigskip
 %%%%%% !!!!!! mega whack. andere Formulierung !!!!!!
 
 In Loggermethoden wie beispielsweise \textit{debug()} (s. Listing 1) oder \textit{error()} (s. Listing 2) wird hier ein Lookup automatisch von Log4j durchgeführt. Durch den Lookup wird vom System in der \gls{jvm} das im Programm
@@ -27,6 +27,6 @@ manipulierte Objekt selektiert und in den leeren geschweiften Klammern eingefüg
 
 Ein \gls{jndi}-lookup erfolgt wie folgt:
 \input{listings/Log4j-jndi-lookup}
-\vspace{0.3cm}
+\bigskip
 
-Das Besondere hierbei ist die Kennzeichnung des \gls{jndi}-lookups durch ein \textbf{\$} gefolgt von geschweiften Klammern.
+Das besondere hierbei ist die Kennzeichnung des \gls{jndi}-lookups durch ein \textbf{\$} gefolgt von geschweiften Klammern.
