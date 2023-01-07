@@ -12,7 +12,7 @@
 \usepackage{ltablex}
 \usepackage{caption}
 \usepackage{setspace}
-\usepackage[backend=biber, style=numeric-comp, sitestyle=verbose-note, autocite=footnote, labelnumber=true]{biblatex}
+\usepackage[backend=biber, style=numeric-comp, sitestyle=verbose-note, autocite=footnote, citestyle=authortitle, labelnumber=true]{biblatex}
 \usepackage{graphicx}
 \usepackage{geometry}
 \usepackage{xurl}
@@ -45,7 +45,7 @@
 \usepackage{glossaries-extra}
 \usepackage{ragged2e}
 \usepackage{glossaries}
-
+%\xapptobimacro{cite}{\setunit{nametitledelim}\printfield{year}}{}{}
 \input{abbreviations}
 
 
