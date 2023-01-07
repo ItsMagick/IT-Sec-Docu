@@ -4,18 +4,12 @@
 \section{Fazit}\label{sec:fazit}
 Log4Shell wird von vielen Sicherheitsforschern als ``Schlimmste Sicherheitslücke des letzten Jahrzehnts''\footfullcite{guardianArticle} bezeichnet, und das wohl nicht zu Unrecht.
 Bei CVE-2021-44228 kamen dabei mehrere Faktoren zusammen, die den perfekten Sturm auslösten.
+
 Als Erstes war Log4Shell eine bereits aktiv ausgenutzte Zero-day Schwachstelle die \gls{rce} ermöglicht.
 Und das alles in der am weitesten verbreiteten Logging Library für Java, die seit Jahren in über 35.000\footfullcite{impact} Java Packages des Maven Central Repository verwendet wird.
 
 Das Ergebnis von Log4Shell waren unzählige kompromittierte Server weltweit, wie beispielsweise das belgische Verteidigungsministerium\footfullcite{zdNet} oder Minecraft: Java Edition.\footfullcite{minecraftForum}
 Aufgrund der fast drei Wochen andauernden Phase des patchens, entdecken neuer Lücken und weiter patchen hat Log4Shell vielen SysAdmins die Weihnachtsferien 2021 gekostet.\footfullcite{kaspersky}
+
 Ebenfalls wurde die Sicherheitslücke laut \gls{cisa} noch im Juli 2022 aktiv ausgenutzt, um US-Regierungsnetzwerke zu kompromittieren.\footfullcite{cisaAlert}
 Außerdem hat Log4Shell eine Diskussion über Sicherheit in open-source Software gestartet, da die Sicherheitslücke 8 Jahre lang existiert hat, ohne entdeckt zu werden.
-
-\subsection{Verwandte CVEs}\label{subsec:weiteres}
-\begin{description}
-    \item[CVE-2021-45046]\footfullcite{45046}\hfill \\Eine weitere Log4Shell Sicherheitslücke, die im offiziellen Patch für CVE-2021-4428\footfullcite{44228} übersehen wurde, wenn nicht-standard Konfigurationen verwendet werden.
-    \item[CVE-2021-4104]\footfullcite{4104}\hfill \\Eine zu Log4Shell analoge \gls{rce} Schwachstelle in Log4j 1.2, die nur nicht-standard Konfigurationen betrifft.
-    \item[CVE-2021-42550]\footfullcite{42550}\hfill \\Eine Sicherheitslücke im Nachfolger von Log4j 1.x, dem logback Framework, das Personen mit Zugriff auf die Konfigurationsdatei \gls{rce} Attacken über \gls{ldap} Server erlaubt.
-    \item[CVE-2021-45105]\footfullcite{45105}\hfill \\Ein weiterer Teil der Log4Shell Sicherheitslücke, die \gls{dos} Attacken erlaubt.
-\end{description}
