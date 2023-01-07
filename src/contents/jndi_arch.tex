@@ -17,9 +17,9 @@ aktiviert.\footfullcite{JNDIArchitektur} Zu den bereitgestellten Services gehör
 überwiegend dafür verwendet, um verteilte Java Applikationen miteinander interagieren zu lassen. Eine Anwendung A kann also einen Payload verarbeiten und
 das Resultat an einer remote location in Form eines Kompilats (Objekts) mithilfe von \gls{jndi} ablegen und serialisieren. Eine andere Anwendung B kann gebrauch von genau
 dieser Datei machen mit Hilfe eines \gls{jndi}-lookups.
-Hierzu muss man die zugrundeliegende Log4j Syntax verstehen:~\ref{sample-log.java}
+Hierzu muss man die zugrundeliegende Log4j Syntax verstehen:~\ref{lst:sample-log.java}
 \input{listings/Log4j-logging}
-\vspace{0.3cm}
+\bigskip
 %%%%%% !!!!!! mega whack. andere Formulierung !!!!!!
 
 In der Loggermethode \textit{.debug} wird hier ein Lookup automatisch von Log4j durchgeführt. Durch den Lookup wird vom System in der \gls{jvm} das im Programm
@@ -27,6 +27,6 @@ manipulierte Objekt selektiert und in den leeren geschweiften Klammern eingefüg
 
 Ein \gls{jndi}-lookup erfolgt wie folgt:
 \input{listings/Log4j-jndi-lookup}
-\vspace{0.3cm}
+\bigskip
 
-Das Besondere hierbei ist die Kennzeichnung des \gls{jndi}-lookups mit dem \textbf{\$} gefolgt von geschweiften Klammern.
+Das besondere hierbei ist die Kennzeichnung des \gls{jndi}-lookups mit dem \textbf{\$} gefolgt von geschweiften Klammern.
