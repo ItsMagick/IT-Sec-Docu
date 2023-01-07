@@ -4,9 +4,13 @@
 \subsection{Patches}\label{subsec:patches}
 Da Log4j ein Bestandteil von vielen weiteren Libraries ist, ist es sehr wichtig überprüfen zu können, ob ein System angreifbar ist oder nicht.
 Daher entstanden direkt nach der Disclosure die ersten Tools zum einfachen Testen, wie beispielsweise Log4ShellTools von Alexander Bakker.\footfullcite{log4ShellTools}
+Mit solchen Tools können SysAdmins schnell testen, ob möglicherweise die Dependency einer Dependency ihres Projekts Log4j implementiert, was insbesondere in großen Java Projekten einfach vorkommen kann.
 
-\subsubsection{Hotpatch von Apache Solr}
-
+\subsubsection{JNDI Live patch}
+Mit Tools wie Log4jHotPatch\footfullcite{hotpatch} ist es möglich, eine verwundbare Instanz während des laufenden Betriebs zu patchen.
+Hierzu wird die \verb|lookup()| Methode von \verb|org.apache.logging.log4j.core.lookup.JndiLookup| durch eine leere Version getauscht, wodurch \gls{jndi} Lookups ins Leere laufen.
+Diese Art des Patches hat dadurch natürlich den Vorteil, dass das System nicht heruntergefahren werden muss, gilt aber nur als temporärer Fix für das eigentliche Problem.
+Daher bleibt als einziger permanenter Patch nur, die offiziellen Patches direkt von Apache zu verwenden.
 
 \subsubsection{Erster offizieller Patch}
 Drei Tage vor der öffentlichen Disclosure von Log4Shell, am 6.12.2021\footfullcite{log4jChange} veröffentlichte Apache den Patch 2.15.0.
@@ -16,3 +20,5 @@ Da dieser Patch weiterhin \gls{ldap} Verbindungen zulässt, ist CVE-2021-44228\f
 \subsubsection{Weitere offizielle Patches}
 Im am 13.12.2021\footfullcite{log4jChange} veröffentlichten Patch 2.16.0 wurde das message-lookup Feature komplett entfernt und \gls{jndi} standardmäßig deaktiviert.
 Mit dem Patch 2.17.0 am 17.12.2021\footfullcite{log4jChange} wurde das \glsaccessshort{ldap} Protokoll aus \glsaccessshort{jndi}-Lookup entfernt und lässt nur noch das JAVA Protokoll zu.
+Damit ist die einzige Möglichkeit die Log4Shell Schwachstelle komplett zu patchen, Log4j 2.17.1(27.12.2021) oder neuer zu verwenden.
+Somit hat es 4 Hotfixes gebraucht und 18 Tage nach öffentlichem Disclosure gedauert, bis Log4Shell von offizieller Seite komplett gepatcht wurde.
