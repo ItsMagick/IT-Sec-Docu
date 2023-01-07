@@ -3,11 +3,11 @@
 
 \subsubsection{Versuchsaufbau und Exploit}
 Da die Log4j Bibliothek bereits gepatcht ist und auch sämtliche Java Versionen bereits gepatcht wurden,
-wurde im Versuchsaufbau ein Git Repository verwendet.\footfullcite{log4jvulnerableapp} Es beinhaltet eine Java Spring Boot Web Applikation, die mit
+wurde im Versuchsaufbau ein Git Repository verwendet.\footcite{log4jvulnerableapp} Es beinhaltet eine Java Spring Boot Web Applikation, die mit
 einer Java Version läuft, die nach wie vor anfällig für Log4Shell Angriffe ist.\\
 Desweiteren benötigt man einen \gls{ldap}-Server, den man selbst kontrolliert, um einen \gls{jndi}-Lookup zu provozieren. Hierfür verwendet wurde ein weiteres
 Git Repository in dem ein bereits voll konfigurierter Server zur Verfügung gestellt wird. Das Repository wurde jedoch aus GitHub entfernt. Das Kompilat des schädlichen
-\gls{ldap}-Servers kann nichtsdestotrotz in einem Archiv gefunden werden.\footfullcite{maliciousLdap}\\
+\gls{ldap}-Servers kann nichtsdestotrotz in einem Archiv gefunden werden.\footcite{maliciousLdap}\\
 Der letzte Schritt zum erfolgreichen Ausführen des Exploits ist es, eine \gls{http}-Anfrage an das Zielsystem zu senden. In der Anfrage muss nun nur noch die \gls{ip}-Addrese mit Port angegeben werden
 unter denen der \gls{ldap}-Server erreichbar ist.
 \input{listings/final-exploit-req}

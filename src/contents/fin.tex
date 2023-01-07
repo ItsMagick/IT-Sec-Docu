@@ -2,18 +2,18 @@
 %! Date = 1/2/23
 
 \section{Fazit}\label{sec:fazit}
-Log4Shell wird von vielen Sicherheitsforschern als ``Schlimmste Sicherheitslücke des letzten Jahrzehnts''\footfullcite{guardianArticle} bezeichnet, und das wohl nicht zu Unrecht.
+Log4Shell wird von vielen Sicherheitsforschern als ``Schlimmste Sicherheitslücke des letzten Jahrzehnts''\footcite{guardianArticle} bezeichnet, und das wohl nicht zu Unrecht.
 Dafür kamen bei CVE-2021-44228 mehrere Faktoren zusammen.
 
-Zunächst war Log4Shell eine bereits aktiv ausgenutzte 0-day Schwachstelle die \gls{rce} ermöglicht.
-Und das alles in der am weitesten verbreiteten Logging Bibliothek für Java, die seit Jahren in über 35.000\footfullcite{impact} Java Packages des Maven Central Repository verwendet wird.
+Zunächst war Log4Shell eine bereits aktiv ausgenutzte Zero-day Schwachstelle die \gls{rce} ermöglicht.
+Und das alles in der am weitesten verbreiteten Logging Bibliothek für Java, die seit Jahren in über 35.000\footcite{impact} Java Packages des Maven Central Repository verwendet wird.
 
 \bigskip
-Das Ergebnis von Log4Shell waren unzählige kompromittierte Server weltweit, wie beispielsweise das belgische Verteidigungsministerium\footfullcite{zdNet} oder Minecraft: Java Edition.\footfullcite{minecraftForum}
-Ebenfalls wurde die Sicherheitslücke laut \gls{cisa} noch im Juli 2022 aktiv ausgenutzt, um US-Regierungsnetzwerke zu kompromittieren.\footfullcite{cisaAlert}
+Das Ergebnis von Log4Shell waren unzählige kompromittierte Server weltweit, wie beispielsweise das belgische Verteidigungsministerium\footcite{zdNet} oder Minecraft: Java Edition.\footcite{minecraftForum}
+Ebenfalls wurde die Sicherheitslücke laut \gls{cisa} noch im Juli 2022 aktiv ausgenutzt, um US-Regierungsnetzwerke zu kompromittieren.\footcite{cisaAlert}
 
 Darüber hinaus hat Log4Shell eine Diskussion über Sicherheit in open-source Software gestartet.
 Da die Sicherheitslücke 8 Jahre lang öffentlich einsehbar existierte, ohne entdeckt zu werden, hat Log4Shell einigen Zweifel an dem ``Viele-Augen-Prinzip'' geweckt.
 
 \bigskip
-Abschließend lässt sich sagen, dass Log4Shell wohl auch in der absehbaren Zukunft noch ein Problem darstellen wird, da bis längst nicht alle verwundbaren Java Pakete gepatcht wurden\footfullcite{kaspersky}.
+Abschließend lässt sich sagen, dass Log4Shell wohl auch in der absehbaren Zukunft noch ein Problem darstellen wird, da bis längst nicht alle verwundbaren Java Pakete gepatcht wurden\footcite{kaspersky}.
