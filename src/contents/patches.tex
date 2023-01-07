@@ -8,11 +8,11 @@ Daher entstanden direkt nach der Disclosure die ersten Tools zum einfachen Teste
 \subsubsection{Hotpatch von Apache Solr}
 
 
-\subsubsection{erster offizieller Patch}
+\subsubsection{Erster offizieller Patch}
 Drei Tage vor der öffentlichen Disclosure von Log4Shell, am 6.12.2021\footfullcite{log4jChange} veröffentlichte Apache den Patch 2.15.0.
 Hier wird das message-lookup standardmäßig deaktiviert und \glsaccessshort{jndi} Verbindungen verwenden nun eine Whitelist, die standardmäßig nur localhost Adressen zulässt.\footfullcite{log4jSecurity}
 Da dieser Patch weiterhin \gls{ldap} Verbindungen zulässt, ist CVE-2021-44228\footfullcite{44228} zwar offiziell geschlossen, man bleibt aber weiterhin für CVE-2021-45046\footfullcite{45046} verwundbar.
 
-\subsubsection{weitere offizielle Patches}
+\subsubsection{Weitere offizielle Patches}
 Im am 13.12.2021\footfullcite{log4jChange} veröffentlichten Patch 2.16.0 wurde das message-lookup Feature komplett entfernt und \gls{jndi} standardmäßig deaktiviert.
 Mit dem Patch 2.17.0 am 17.12.2021\footfullcite{log4jChange} wurde das \glsaccessshort{ldap} Protokoll aus \glsaccessshort{jndi}-Lookup entfernt und lässt nur noch das JAVA Protokoll zu.
