@@ -1,0 +1,12 @@
+%! Author = chaorn
+%! Date = 06.01.23
+\begin{lstlisting}[language=java, label=sample-log.java]
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+public class MyClass {
+    private static final Logger LOGGER = LogManager.getLogger();
+    // ...
+       LOGGER.debug("Logging in user {} with birthday {}", user.getName(), user.getBirthdayCalendar());
+}
+\end{lstlisting}
+\captionof{lstlisting}{\texttt{sample-log.java}: Loggen mit Log4j}

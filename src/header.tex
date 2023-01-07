@@ -28,6 +28,7 @@
 \usepackage{makecell}
 \usepackage{libertine}
 \usepackage{amsmath}
+\usepackage{listings}
 \usepackage[
     bookmarks=true,
     bookmarksopen=true,
@@ -42,7 +43,7 @@
     urlcolor=black
 ]{hyperref}
 \usepackage{glossaries-extra}
-
+\usepackage{glossaries}
 
 \input{abbreviations}
 
@@ -64,13 +65,13 @@
     \fancyfoot[R]{\thepage}
 }
 
-%\lstset{
-%    basicstyle=\ttfamily,
-%    columns=fullflexible,
-%    frame=single,
-%    breaklines=true,
-%    postbreak=\mbox{$\hookrightarrow$\space},
-%}
+\lstset{
+    basicstyle=\ttfamily,
+    columns=fullflexible,
+    frame=single,
+    breaklines=true,
+    postbreak=\mbox{$\hookrightarrow$\space},
+}
 \renewcommand{\baselinestretch}{1.3}
 \setabbreviationstyle{short-long}
 

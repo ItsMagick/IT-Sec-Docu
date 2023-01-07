@@ -1,0 +1,28 @@
+%! Author = chaorn
+%! Date = 06.01.23
+\subsubsection{JNDI Architektur und Funktionsweise}
+\\
+\begin{figure}[!htb] % ! - override default, h - place here, t - place figure at top of a page, b - place figure at bottom of a page
+    \begin{center}
+        \includegraphics[scale=0.75]{images/jndiarch}
+    \end{center}
+    \caption{JNDI Architektur}
+\end{figure}
+\\
+Das \gls{jndi} besteht im Grunde aus einer \gls{api} und einem \gls{spi}. Der Entwickler einer Java Applikation interagiert überwiegend mit der \gls{api}, welche
+naming und directory services zur Verfügung stellt. Für spezielle Funktionalitäten sorgt das \gls{spi}, dass je nach Bedarf ein benötigtes Modul ähnlich wie ein Pluginmanager
+aktiviert.\footfullcite{JNDIArchitektur} Zu den bereitgestellten Services gehören unter anderem \gls{ldap} und \gls{rmi}. \gls{jndi} wird
+überwiegend dafür verwendet, um verteilte Java Applikationen miteinander interagieren zu lassen. Eine Anwendung A kann also einen Payload verarbeiten und
+das Resultat an einer remote location in Form eines Kompilats (Objekts) mithilfe von \gls{jndi} ablegen und serialisieren. Eine andere Anwendung B kann gebrauch von genau
+dieser Datei machen mithilfe eines \gls{jndi}-lookups.\clearpage
+Hierzu muss man die zugrundeliegende Log4j Syntax verstehen:~\ref{sample-log.java}
+\input{listings/Log4j-logging}
+%%%%%% !!!!!! mega whack. andere Formulierung !!!!!!
+
+In der Loggermethode \textit{.debug} wird hier ein Lookup automatisch von Log4j durchgeführt. Durch den Lookup wird vom System in der \gls{jvm} das im Programm
+manipulierte Objekt selektiert und in den leeren geschweiften Klammern eingefügt. Log4j bringt von sich aus \gls{jndi} Kompatibilität mit.\\
+
+Ein \gls{jndi}-lookup erfolgt wie folgt:
+\input{listings/Log4j-jndi-lookup}\\
+
+Das Besondere hierbei ist die Kennzeichnung des \gls{jndi}-lookups mit dem \textbf{\$} gefolgt von geschweiften Klammern.
