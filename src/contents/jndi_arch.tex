@@ -10,7 +10,8 @@ und der grundlegenden Funktionalität der \gls{jndi} Bibliothek.
     \end{center}
     \caption{JNDI Architektur}
 \end{figure}
-\\
+\bigskip
+
 Das \gls{jndi} besteht im Grunde aus einer \gls{api} und einem \gls{spi}.
 Der Entwickler einer Java Applikation interagiert überwiegend mit der \gls{api}, welche sogenannte \textit{naming} und \textit{directory services} zur Verfügung stellt.
 
@@ -29,6 +30,8 @@ Hierzu muss man die zugrundeliegende Log4j Syntax verstehen:
 In Loggermethoden wie beispielsweise \textit{debug()} (siehe Listing 1) oder \textit{error()} (siehe Listing 2) wird hier ein Lookup automatisch von Log4j durchgeführt.
 Durch den Lookup wird vom System in der \gls{jvm} das im Programm manipulierte Objekt selektiert und in den leeren geschweiften Klammern eingefügt.
 Log4j bringt von sich aus \gls{jndi} Kompatibilität mit.
+
+\newpage
 
 Ein \gls{jndi}-lookup erfolgt wie folgt:
 \input{listings/Log4j-jndi-lookup}
