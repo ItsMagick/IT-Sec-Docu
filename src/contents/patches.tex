@@ -17,7 +17,7 @@ Daher bleibt als einzige permanente Lösung nur, die offiziellen Patches direkt 
 \subsubsection{Erster offizieller Patch}
 Drei Tage vor der öffentlichen Disclosure von Log4Shell, am 6.12.2021\footcite{log4jChange} veröffentlichte Apache den Patch 2.15.0.
 
-Hier wird das message-lookup standardmäßig deaktiviert und \glsa{jndi} Verbindungen verwenden nun eine Whitelist, die standardmäßig nur localhost Adressen zulässt.\footcite{log4jSecurity}
+Hier wird das message-lookup standardmäßig deaktiviert und \gls{jndi} Verbindungen verwenden nun eine Whitelist, die standardmäßig nur localhost Adressen zulässt.\footcite{log4jSecurity}
 Da dieser Patch weiterhin \gls{ldap} Verbindungen zulässt, ist CVE-2021-44228\footcite{44228} zwar offiziell geschlossen, man bleibt aber weiterhin für CVE-2021-45046(siehe: \ref{itm:cve-2021-45046})\footcite{45046} verwundbar.
 
 \subsubsection{Weitere offizielle Patches}
