@@ -8,10 +8,10 @@ Verfasst wurde es von https://github.com/JoStrecker und von https://github.com/I
 Kompilieren kann man das Dokument mit 1. :
 in IT-Sec-Docu/src
 
-`pdflatex -file-line-error -interaction=nonstopmode -synctex=1 -output-format=pdf -output-directory=/home/charon/Downloads/IT-Sec-Docu/out main.tex`
+`pdflatex -file-line-error -interaction=nonstopmode -synctex=1 -output-format=pdf -output-directory=/path/to/IT-Sec-Docu/out main.tex`
 
 gefolgt von 2. :
 in IT-Sec-Docu/out
-`biber --input-directory=/home/charon/Downloads/IT-Sec-Docu/src main`
+`biber --input-directory=/path/to/IT-Sec-Docu/src main`
 
 gefolgt von zwei mal  dem Schritt 1. 
