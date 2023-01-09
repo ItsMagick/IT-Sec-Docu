@@ -2,7 +2,7 @@
 %! Date = 06.01.23
 \subsubsection{JNDI Architektur und Funktionsweise}
 
-Um das zugrunde liegende Problem besser verstehen zu können hilft ein etwas tieferer Einblick in die Architektur
+Um das zugrunde liegende Problem besser verstehen zu können, hilft ein etwas tieferer Einblick in die Architektur
 und der grundlegenden Funktionalität der \gls{jndi} Bibliothek.
 \begin{figure}[!htb]\label{fig:jndiarch} % ! - override default, h - place here, t - place figure at top of a page, b - place figure at bottom of a page
     \begin{center}
@@ -19,15 +19,20 @@ Für spezielle Funktionalitäten sorgt das \gls{spi}, das je nach Bedarf ein ben
 Zu den bereitgestellten Services gehören unter anderem \gls{ldap} und \gls{rmi}.
 \gls{jndi} wird überwiegend dafür verwendet, verteilte Java Applikationen miteinander interagieren zu lassen.
 
-Eine Anwendung A kann also einen Payload verarbeiten und das Resultat an einer remote location in Form eines Kompilats (Objekts) mithilfe von \gls{jndi} ablegen und serialisieren.
-Eine andere Anwendung B kann mit Hilfe eines \gls{jndi}-lookups Gebrauch von genau dieser Datei machen.
+Eine Anwendung \textit{A} kann also einen Payload verarbeiten und das Resultat an einer remote location in Form eines Kompilats (Objekts) mithilfe von \gls{jndi} ablegen und serialisieren.
+Eine andere Anwendung \textit{B} kann mit Hilfe eines \gls{jndi}-lookups Gebrauch von genau dieser Datei machen.
 
 Hierzu muss man die zugrundeliegende Log4j Syntax verstehen:
 \input{listings/Log4j-logging}
 \bigskip
 %%%%%% !!!!!! mega whack. andere Formulierung !!!!!!
 
-In Loggermethoden wie beispielsweise \textit{debug()} (siehe Listing 1) oder \textit{error()} (siehe Listing 2) wird hier ein Lookup automatisch von Log4j durchgeführt.
+Das Loggen funktioniert mithilfe einer String interpolation. Der zur Laufzeit berechnete Parameter an erster Stelle wird hierbei automatisch
+mithilfe einer String interpolation an der Stelle des ersten geschweiften Klammerpaars eingesetzt. Analog gilt diese Funktionsweise für den zweiten Parameter (siehe Listing 1).
+
+Die Loggermethode \textit{error()} (siehe Listing 2) führt an dieser Stelle statt einer String interpolation zu einem von der Log4j Bibliothek bereits implementierten Lookup.
+In diesem Fall handelt es sich um einen Sonderfall des Lookups, dem sogenannten \textit{\gls{jndi}-Lookup}. Der \gls{jndi}-Lookup wird von Log4j so interpretiert, dass eine Datei zur Laufzeit
+an einer anderen Location bereitgestellt wird.
 Durch den Lookup wird vom System in der \gls{jvm} das im Programm manipulierte Objekt selektiert und in den leeren geschweiften Klammern eingefügt.
 Log4j bringt von sich aus \gls{jndi} Kompatibilität mit.
 

