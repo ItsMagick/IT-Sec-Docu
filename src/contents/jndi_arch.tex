@@ -27,10 +27,10 @@ Hierzu muss man die zugrundeliegende Log4j Syntax verstehen:
 \bigskip
 %%%%%% !!!!!! mega whack. andere Formulierung !!!!!!
 
-Das Loggen funktioniert mithilfe einer String interpolation. Der zur Laufzeit berechnete Parameter an erster Stelle wird hierbei automatisch
-mithilfe einer String interpolation an der Stelle des ersten geschweiften Klammerpaars eingesetzt. Analog gilt diese Funktionsweise für den zweiten Parameter (siehe Listing 1).
+Das Loggen funktioniert mithilfe einer String-Interpolation. Der zur Laufzeit berechnete Parameter an erster Stelle wird hierbei automatisch
+mithilfe einer String-Interpolation an der Stelle des ersten geschweiften Klammerpaars eingesetzt. Analog gilt diese Funktionsweise für den zweiten Parameter (siehe Listing 1).
 
-Die Loggermethode \textit{error()} (siehe Listing 2) führt an dieser Stelle statt einer String interpolation zu einem von der Log4j Bibliothek bereits implementierten Lookup.
+Die Loggermethode \textit{error()} (siehe Listing 2) führt an dieser Stelle statt einer String-Interpolation zu einem von der Log4j Bibliothek bereits implementierten Lookup.
 In diesem Fall handelt es sich um einen Sonderfall des Lookups, dem sogenannten \textit{\gls{jndi}-Lookup}. Der \gls{jndi}-Lookup wird von Log4j so interpretiert, dass eine Datei zur Laufzeit
 an einer anderen Location bereitgestellt wird.
 Durch den Lookup wird vom System in der \gls{jvm} das im Programm manipulierte Objekt selektiert und in den leeren geschweiften Klammern eingefügt.
